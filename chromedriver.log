@@ -1,0 +1,167 @@
+[1718862470.447][INFO]: Starting ChromeDriver 125.0.6422.141 (4b1e83937122185343ba92e909b021f307c719ca-refs/branch-heads/6422@{#1186}) on port 30971
+[1718862470.447][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1718862470.887][INFO]: [134f1522115eccb96563f4103d91d7f3] COMMAND InitSession {
+   "capabilities": {
+      "firstMatch": [ {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "start-maximized", "--disable-blink-features=AutomationControlled" ],
+            "extensions": [  ]
+         },
+         "goog:loggingPrefs": {
+            "browser": "ALL",
+            "driver": "ALL"
+         }
+      } ]
+   }
+}
+[1718862470.888][INFO]: Browser search. Trying... C:\Users\vshsh\.cache\selenium\chromedriver\win64\125.0.6422.141\chrome.exe
+[1718862470.888][INFO]: Browser search. Trying... C:\Users\vshsh\.cache\selenium\chromedriver\win64\125.0.6422.141\chrome.exe
+[1718862470.889][INFO]: Browser search. Trying... C:\Users\vshsh\.cache\selenium\chromedriver\win64\125.0.6422.141\chromium.exe
+[1718862470.895][INFO]: Browser search. Trying... C:\Users\vshsh\AppData\Local\Google\Chrome\Application\chrome.exe
+[1718862470.895][INFO]: Browser search. Trying... C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+[1718862470.896][INFO]: Browser search. Trying... C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+[1718862470.896][INFO]: Browser search. Trying... C:\Program Files\Google\Chrome\Application\chrome.exe
+[1718862470.896][INFO]: Browser search. Found at  C:\Program Files\Google\Chrome\Application\chrome.exe
+[1718862470.898][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1718862470.899][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1718862470.904][INFO]: ChromeDriver supports communication with Chrome via pipes. This is more reliable and more secure.
+[1718862470.904][INFO]: Use the --remote-debugging-pipe Chrome switch instead of the default --remote-debugging-port to enable this communication mode.
+[1718862470.908][INFO]: Launching chrome: "C:\Program Files\Google\Chrome\Application\chrome.exe" --allow-pre-commit-input --disable-background-networking --disable-backgrounding-occluded-windows --disable-blink-features=AutomationControlled --disable-client-side-phishing-detection --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-automation --enable-logging --log-level=0 --no-first-run --no-service-autorun --password-store=basic --remote-debugging-port=0 --start-maximized --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\vshsh\AppData\Local\Temp\scoped_dir4860_1728551200" data:,
+[1718862472.187][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1718862472.511][INFO]: [134f1522115eccb96563f4103d91d7f3] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": false,
+      "browserName": "chrome",
+      "browserVersion": "125.0.6422.78",
+      "chrome": {
+         "chromedriverVersion": "125.0.6422.141 (4b1e83937122185343ba92e909b021f307c719ca-refs/branch-heads/6422@{#1186})",
+         "userDataDir": "C:\\Users\\vshsh\\AppData\\Local\\Temp\\scoped_dir4860_1728551200"
+      },
+      "fedcm:accounts": true,
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:57105"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:extension:credBlob": true,
+      "webauthn:extension:largeBlob": true,
+      "webauthn:extension:minPinLength": true,
+      "webauthn:extension:prf": true,
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "134f1522115eccb96563f4103d91d7f3"
+}
+[1718862472.909][INFO]: [134f1522115eccb96563f4103d91d7f3] COMMAND MaximizeWindow {
+}
+[1718862472.910][INFO]: Waiting for pending navigations...
+[1718862472.911][INFO]: Done waiting for pending navigations. Status: ok
+[1718862472.912][INFO]: Waiting for pending navigations...
+[1718862472.913][INFO]: Done waiting for pending navigations. Status: ok
+[1718862472.913][INFO]: [134f1522115eccb96563f4103d91d7f3] RESPONSE MaximizeWindow {
+   "height": 832,
+   "width": 1552,
+   "x": -8,
+   "y": -8
+}
+[1718862472.926][INFO]: [134f1522115eccb96563f4103d91d7f3] COMMAND SetTimeouts {
+   "implicit": 30000
+}
+[1718862472.926][INFO]: [134f1522115eccb96563f4103d91d7f3] RESPONSE SetTimeouts
+[1718862472.933][INFO]: [134f1522115eccb96563f4103d91d7f3] COMMAND Navigate {
+   "url": "https://www.makemytrip.com/"
+}
+[1718862472.933][INFO]: Waiting for pending navigations...
+[1718862472.935][INFO]: Done waiting for pending navigations. Status: ok
+[1718862473.226][INFO]: Waiting for pending navigations...
+[1718862479.273][INFO]: Done waiting for pending navigations. Status: ok
+[1718862479.273][INFO]: [134f1522115eccb96563f4103d91d7f3] RESPONSE Navigate
+[1718862479.287][INFO]: [134f1522115eccb96563f4103d91d7f3] COMMAND GetUrl {
+}
+[1718862479.287][INFO]: Waiting for pending navigations...
+[1718862479.352][INFO]: Done waiting for pending navigations. Status: ok
+[1718862479.404][INFO]: Waiting for pending navigations...
+[1718862479.406][INFO]: Done waiting for pending navigations. Status: ok
+[1718862479.406][INFO]: [134f1522115eccb96563f4103d91d7f3] RESPONSE GetUrl "https://www.makemytrip.com/"
+[1718862479.434][INFO]: [134f1522115eccb96563f4103d91d7f3] COMMAND FindElement {
+   "using": "xpath",
+   "value": "//span[@data-cy='closeModal']"
+}
+[1718862479.434][INFO]: Waiting for pending navigations...
+[1718862479.436][INFO]: Done waiting for pending navigations. Status: ok
+[1718862509.450][INFO]: Waiting for pending navigations...
+[1718862509.452][INFO]: Done waiting for pending navigations. Status: ok
+[1718862509.452][INFO]: [134f1522115eccb96563f4103d91d7f3] RESPONSE FindElement ERROR no such element: Unable to locate element: {"method":"xpath","selector":"//span[@data-cy='closeModal']"}
+  (Session info: chrome=125.0.6422.78)
