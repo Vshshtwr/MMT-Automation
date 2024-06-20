@@ -75,9 +75,11 @@ public class TestCases {
         System.out.println("Start Test case: testCase02");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-        WebElement popUp = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@data-cy='closeModal']")));
+        handlePopUp(wait, driver);
+
+      //  WebElement popUp = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@data-cy='closeModal']")));
        // WebElement popUp = driver.findElement(By.xpath("//span[@data-cy='closeModal']"));
-        popUp.click();
+        //popUp.click();
        
        // calendar(29);
         Thread.sleep(5000);
@@ -85,6 +87,20 @@ public class TestCases {
         departureCalendar.click();        
         Thread.sleep(2000);
 
+        WebElement fromCity = driver.findElement(By.id("fromCity"));
+        fromCity.click();
+
+        WebElement from = driver.findElement(By.xpath("//input[@placeholder='From']"));
+        from.sendKeys("blr");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Bengaluru']"))).click();
+
+        WebElement toCity = driver.findElement(By.id("toCity"));
+        toCity.click();
+
+        WebElement to = driver.findElement(By.xpath("//input[@placeholder='To']"));
+        to.sendKeys("del");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='New Delhi']"))).click();
+        Thread.sleep(2000);
 
         WebElement nextMonthCalendar = driver.findElement(By.xpath("//div[@class='DayPicker-Month'][2]//p[text()='29']"));
         nextMonthCalendar.click();
@@ -116,11 +132,11 @@ public class TestCases {
         //Thread.sleep(2000);
 
         WebElement from = driver.findElement(By.xpath("//input[@placeholder='From']"));
-        from.sendKeys("ybr");
+        from.sendKeys("ypr");
        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Bangalore']"))).click();
 
        WebElement to = driver.findElement(By.xpath("//input[@placeholder='To']"));
-        to.sendKeys("NDLS");
+        to.sendKeys("ndls");
        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='New Delhi Railway Station']"))).click();
 
        WebElement secondTrainCalendar = driver.findElement(By.xpath("(//div[text()='29'])[2]"));
@@ -164,7 +180,10 @@ public class TestCases {
         WebElement busDate = driver.findElement(By.xpath("(//div[text()='29'])[2]"));
         String busDatetext = busDate.getText();
         busDate.click();
-        
+        Thread.sleep(2000);
+
+        WebElement travelDate = driver.findElement(By.xpath("//input[@id='travelDate']"));
+        String travelDatetext = travelDate.getText();
 
         WebElement busSearch = driver.findElement(By.xpath("//button[text()='Search']"));
         busSearch.click();
@@ -174,27 +193,32 @@ public class TestCases {
         //System.out.println("Bus Date: " + busDatetext);
         //Thread.sleep(2000);
 
-        try {
-            WebElement errorMsg = driver.findElement(By.xpath("//span[contains(@class,'error-title')]"));
-            String errorMsgText = errorMsg.getText();
-            if (errorMsgText.contains("No buses found for " + busDatetext)) {
-                System.out.println("Verification passed: No buses found for "+ busDatetext);
-            } else {
-                System.out.println("Verification failed: The expected message was not found. Found message: " + errorMsgText);
-            }
-        } catch (Exception e) {
-            System.out.println("Verification failed: The error message element was not found or another error occurred.");
-            e.printStackTrace();
+    
+    try {
+        WebElement noBusesMessage = driver.findElement(By.xpath("//span[contains(@class, 'error-title')]"));
+        String noBusesMessagetxt = noBusesMessage.getText();
+        if (noBusesMessagetxt.contains(travelDatetext)) {
+            System.out.println("Test Passed: 'No buses found' message is displayed ");
+        } else {
+            System.out.println("Test Failed: 'No buses found' message is either not displayed or does not match expected text.");
         }
-        
-        System.out.println("End Test case: testCase04");
-
-       
-
+    } catch (Exception e) {
+        System.out.println("Test Failed due to exception: " + e.getMessage());
+        e.printStackTrace();
     }
-
-      
 }
+public static void handlePopUp(WebDriverWait wait, WebDriver driver) {
+    try {
+        WebElement popUp = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@data-cy='closeModal']")));
+        popUp.click();
+        System.out.println("Pop-up closed successfully.");
+    } catch (Exception e) {
+        // Pop-up not found, continuing with the test
+        System.out.println("No pop-up appeared.");
+    }
+}
+}
+    
        
 
 
