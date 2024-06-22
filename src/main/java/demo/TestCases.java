@@ -16,6 +16,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+
 import java.util.logging.Level;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -52,8 +54,8 @@ public class TestCases {
     public void endTest()
     {
         System.out.println("End Test: TestCases");
-    //    driver.close();
-     //   driver.quit();
+        driver.close();
+        driver.quit();
 
     }
     public void homePage(){
@@ -184,6 +186,7 @@ public class TestCases {
 
         WebElement travelDate = driver.findElement(By.xpath("//input[@id='travelDate']"));
         String travelDatetext = travelDate.getText();
+        System.out.println(travelDatetext);
 
         WebElement busSearch = driver.findElement(By.xpath("//button[text()='Search']"));
         busSearch.click();
@@ -194,19 +197,24 @@ public class TestCases {
         //Thread.sleep(2000);
 
     
-    try {
-        WebElement noBusesMessage = driver.findElement(By.xpath("//span[contains(@class, 'error-title')]"));
-        String noBusesMessagetxt = noBusesMessage.getText();
-        if (noBusesMessagetxt.contains(travelDatetext)) {
-            System.out.println("Test Passed: 'No buses found' message is displayed ");
-        } else {
-            System.out.println("Test Failed: 'No buses found' message is either not displayed or does not match expected text.");
+        try {
+            WebElement noBusesMessage = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[3]/div[1]/span[1]"));
+            String noBusesMessagetxt = noBusesMessage.getText();
+            System.out.println(noBusesMessagetxt);
+            Thread.sleep(2000);
+            if (noBusesMessagetxt.contains("No buses found")) {
+                System.out.println("Test Passed: 'No buses found' message is displayed ");
+            } else {
+                System.out.println("Test Failed: 'No buses found' message is either not displayed or does not match expected text.");
+            }
+        } catch (Exception e) {
+            System.out.println("Test Failed due to exception: " + e.getMessage());
+            e.printStackTrace();
         }
-    } catch (Exception e) {
-        System.out.println("Test Failed due to exception: " + e.getMessage());
-        e.printStackTrace();
+    
     }
-}
+    
+
 public static void handlePopUp(WebDriverWait wait, WebDriver driver) {
     try {
         WebElement popUp = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@data-cy='closeModal']")));
@@ -217,6 +225,8 @@ public static void handlePopUp(WebDriverWait wait, WebDriver driver) {
         System.out.println("No pop-up appeared.");
     }
 }
+
+
 }
     
        
